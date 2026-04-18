@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoInsureX — User Dashboard.">
+  <title>Dashboard — AutoInsureX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .dashboard-header {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .policy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .badge-status {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .badge-pending { background: #fef3c7; color: #92400e; }
+    .badge-active { background: #d1fae5; color: #065f46; }
+    .badge-rejected { background: #fee2e2; color: #991b1b; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="aix-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand" href="index.html">Auto<span>InsureX</span></a>
+      <ul class="nav d-none d-md-flex">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="plans.html">Plans</a></li>
+        <li><a class="nav-link" href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="aix-page container" style="margin-top: 2rem;">
+    <div class="dashboard-header">
+      <div>
+        <h2 style="margin:0; font-weight:700;">My Dashboard</h2>
+        <p style="margin:0; color:var(--text-muted);" id="userWelcome">Welcome back, User!</p>
+      </div>
+      <div>
+        <a href="index.html" class="aix-btn aix-btn-primary">Buy New Policy</a>
+      </div>
+    </div>
+
+    <h4>My Policies & Purchases</h4>
+    <div id="purchasesContainer">
+      <p>Loading your policies...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="aix-footer">
+    © 2026 AutoInsureX. All rights reserved. This is an academic demo project.
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>initDashboardPage();</script>
+</body>
+</html>

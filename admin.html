@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoInsureX — Admin Dashboard.">
+  <title>Admin Dashboard — AutoInsureX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .dashboard-header {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .admin-table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      padding: 1rem;
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+    .admin-table th, .admin-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .admin-table th {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    .badge-status {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .badge-pending { background: #fef3c7; color: #92400e; }
+    .badge-active { background: #d1fae5; color: #065f46; }
+    .badge-rejected { background: #fee2e2; color: #991b1b; }
+    .action-btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="aix-navbar" style="background:#1e293b;">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand" href="index.html" style="color:#fff;">Auto<span style="color:#38bdf8;">InsureX</span> <small style="font-size:0.5em;color:#cbd5e1;">ADMIN</small></a>
+      <ul class="nav d-none d-md-flex">
+        <li><a class="nav-link" href="#" id="logoutBtn" style="color:#fff;">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="aix-page container" style="margin-top: 2rem;">
+    <div class="dashboard-header">
+      <div>
+        <h2 style="margin:0; font-weight:700;">Admin Management Portal</h2>
+        <p style="margin:0; color:var(--text-muted);" id="adminWelcome">Overview of all system purchases and verifications.</p>
+      </div>
+    </div>
+
+    <h4>Recent Policy Purchases</h4>
+    <div class="admin-table-container">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Vehicle</th>
+            <th>Plan Selected</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Video</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="adminPurchasesTbody">
+          <tr><td colspan="8" style="text-align:center;">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>initAdminPage();</script>
+</body>
+</html>
