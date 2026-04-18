@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoInsureX — Compare selected insurance plans side by side.">
+  <title>Compare Plans — AutoInsureX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="aix-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand" href="index.html">Auto<span>InsureX</span></a>
+      <ul class="nav d-none d-md-flex">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="plans.html">Plans</a></li>
+        <li><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Progress Stepper -->
+  <div class="aix-stepper">
+    <div class="stepper-track">
+      <div class="stepper-step"><div class="stepper-circle">1</div><span class="stepper-label">Register</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">2</div><span class="stepper-label">Vehicle</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">3</div><span class="stepper-label">Plans</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">4</div><span class="stepper-label">Compare</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">5</div><span class="stepper-label">Login</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">6</div><span class="stepper-label">Payment</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">7</div><span class="stepper-label">Upload</span></div>
+      <div class="stepper-line"></div>
+      <div class="stepper-step"><div class="stepper-circle">8</div><span class="stepper-label">Status</span></div>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <main class="aix-page">
+    <div class="container" style="max-width: 900px;">
+      <div class="aix-card" style="overflow-x: auto;">
+        <div class="aix-card-header">Plan Comparison</div>
+        <div class="aix-card-sub">Side-by-side comparison of your selected plans.</div>
+
+        <table class="aix-compare-table">
+          <thead id="compareThead"></thead>
+          <tbody id="compareTbody"></tbody>
+        </table>
+      </div>
+
+      <div class="aix-card mt-4" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+        <div class="aix-card-header" style="font-size:1rem;">Ready to Buy?</div>
+        <div class="aix-card-sub">Choose the plan you'd like to purchase.</div>
+
+        <div class="aix-form-group">
+          <label for="planSelect">Select a Plan</label>
+          <select id="planSelect" class="aix-input"></select>
+        </div>
+
+        <button class="aix-btn aix-btn-success aix-btn-lg aix-btn-block" id="proceedBtn">
+          Proceed to Buy →
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="aix-footer">
+    © 2026 AutoInsureX. All rights reserved. This is an academic demo project.
+  </footer>
+
+  <script src="js/dummyData.js"></script>
+  <script src="js/script.js"></script>
+  <script>initComparePage();</script>
+</body>
+</html>

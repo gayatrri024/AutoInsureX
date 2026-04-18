@@ -1,0 +1,610 @@
+/* ============================================================
+   AutoInsureX — Global Stylesheet
+   Clean, professional, minimal-animation design system
+   ============================================================ */
+
+/* ---- Google Font ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ---- CSS Custom Properties ---- */
+:root {
+  --primary:        #1a56db;
+  --primary-dark:   #1340a8;
+  --primary-light:  #e8effd;
+  --accent:         #0ea5e9;
+  --accent-dark:    #0284c7;
+  --success:        #059669;
+  --success-light:  #d1fae5;
+  --warning:        #d97706;
+  --warning-light:  #fef3c7;
+  --danger:         #dc2626;
+  --danger-light:   #fee2e2;
+
+  --bg-body:        #f0f4f8;
+  --bg-card:        #ffffff;
+  --bg-navbar:      #0f172a;
+
+  --text-primary:   #1e293b;
+  --text-secondary: #64748b;
+  --text-muted:     #94a3b8;
+  --text-inverse:   #ffffff;
+
+  --border-color:   #e2e8f0;
+  --shadow-sm:      0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:      0 4px 12px rgba(0,0,0,.07);
+  --shadow-lg:      0 10px 30px rgba(0,0,0,.10);
+
+  --radius-sm:      6px;
+  --radius-md:      10px;
+  --radius-lg:      16px;
+
+  --font-family:    'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { text-decoration: none; color: var(--primary); }
+a:hover { color: var(--primary-dark); }
+
+img, svg { display: block; max-width: 100%; }
+
+/* ---- Navbar ---- */
+.aix-navbar {
+  background: var(--bg-navbar);
+  padding: 0.75rem 0;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.aix-navbar .navbar-brand {
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--text-inverse) !important;
+  letter-spacing: -0.5px;
+}
+
+.aix-navbar .navbar-brand span {
+  color: var(--accent);
+}
+
+.aix-navbar .nav-link {
+  color: rgba(255,255,255,.7) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius-sm);
+}
+
+.aix-navbar .nav-link:hover,
+.aix-navbar .nav-link.active {
+  color: #fff !important;
+  background: rgba(255,255,255,.08);
+}
+
+/* ---- Progress Stepper ---- */
+.aix-stepper {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.stepper-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.stepper-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.stepper-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: var(--border-color);
+  color: var(--text-muted);
+}
+
+.stepper-step.active .stepper-circle {
+  background: var(--primary);
+  color: #fff;
+}
+
+.stepper-step.done .stepper-circle {
+  background: var(--success);
+  color: #fff;
+}
+
+.stepper-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.stepper-step.active .stepper-label {
+  color: var(--primary);
+}
+
+.stepper-step.done .stepper-label {
+  color: var(--success);
+}
+
+.stepper-line {
+  width: 36px;
+  height: 2px;
+  background: var(--border-color);
+  flex-shrink: 0;
+  margin: 0 4px;
+}
+
+.stepper-line.done {
+  background: var(--success);
+}
+
+/* ---- Page Container ---- */
+.aix-page {
+  flex: 1;
+  padding: 2.5rem 1rem;
+}
+
+/* ---- Cards ---- */
+.aix-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+}
+
+.aix-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.aix-card-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.aix-card-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Hero / Landing ---- */
+.aix-hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.aix-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+}
+
+.aix-hero h1 span {
+  color: var(--primary);
+}
+
+.aix-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}
+
+/* ---- Forms ---- */
+.aix-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.aix-form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.aix-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: #fff;
+  outline: none;
+}
+
+.aix-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,86,219,.12);
+}
+
+.aix-input.is-invalid {
+  border-color: var(--danger);
+}
+
+.aix-input-error {
+  font-size: 0.78rem;
+  color: var(--danger);
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.aix-input.is-invalid + .aix-input-error,
+.aix-input.is-invalid ~ .aix-input-error {
+  display: block;
+}
+
+select.aix-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8.825a.5.5 0 01-.354-.146l-4-4a.5.5 0 11.708-.708L6 7.617l3.646-3.646a.5.5 0 11.708.708l-4 4A.5.5 0 016 8.825z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* ---- Buttons ---- */
+.aix-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.aix-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aix-btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.aix-btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.aix-btn-success {
+  background: var(--success);
+  color: #fff;
+}
+
+.aix-btn-success:hover:not(:disabled) {
+  background: #047857;
+}
+
+.aix-btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.aix-btn-outline:hover:not(:disabled) {
+  background: var(--primary-light);
+}
+
+.aix-btn-outline.selected {
+  background: var(--primary);
+  color: #fff;
+}
+
+.aix-btn-lg {
+  padding: 0.85rem 2.2rem;
+  font-size: 1rem;
+}
+
+.aix-btn-block {
+  width: 100%;
+}
+
+/* ---- Plan Cards ---- */
+.plan-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.plan-card.selected {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,86,219,.15);
+}
+
+.plan-card .plan-provider {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent-dark);
+  margin-bottom: 0.35rem;
+}
+
+.plan-card .plan-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.plan-card .plan-type-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--primary-light);
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+
+.plan-card .plan-price {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.plan-card .plan-price span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.plan-card .plan-coverage {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.plan-card .plan-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  flex: 1;
+}
+
+.plan-card .plan-highlights li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plan-card .plan-highlights li:last-child {
+  border-bottom: none;
+}
+
+.plan-card .plan-highlights li::before {
+  content: "✓";
+  color: var(--success);
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.plan-card .plan-rating {
+  font-size: 0.8rem;
+  color: var(--warning);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ---- Compare Table ---- */
+.aix-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.aix-compare-table th,
+.aix-compare-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.aix-compare-table thead th {
+  background: var(--bg-navbar);
+  color: var(--text-inverse);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aix-compare-table thead th:first-child {
+  border-top-left-radius: var(--radius-md);
+}
+
+.aix-compare-table thead th:last-child {
+  border-top-right-radius: var(--radius-md);
+}
+
+.aix-compare-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.aix-compare-table .attr-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 150px;
+}
+
+/* ---- Login ---- */
+.aix-login-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ---- Payment Summary ---- */
+.aix-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.aix-summary-row:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+/* ---- Status ---- */
+.aix-status-box {
+  text-align: center;
+  padding: 3.5rem 2rem;
+}
+
+.aix-status-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 2rem;
+}
+
+.aix-status-icon.pending {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.aix-status-icon.success {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.aix-status-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.aix-status-sub {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+/* ---- Upload Area ---- */
+.aix-upload-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  background: #fafbfc;
+}
+
+.aix-upload-zone:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.aix-upload-zone .upload-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+.aix-upload-zone .upload-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aix-upload-zone .upload-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.aix-file-name {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* ---- Footer ---- */
+.aix-footer {
+  background: var(--bg-navbar);
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.78rem;
+  margin-top: auto;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .aix-hero h1 { font-size: 1.75rem; }
+  .stepper-label { display: none; }
+  .stepper-line { width: 20px; }
+  .aix-card { padding: 1.5rem; }
+  .plan-card { padding: 1.25rem; }
+}
